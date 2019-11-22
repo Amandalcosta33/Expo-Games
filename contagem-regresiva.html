@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Contagem Regressiva</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="caixa">
+                <h1><img  id="logo" src="imagens/logoevc.png" alt="Expo Games" ></h1>
+                <nav>
+                    <ul>
+                            <li> <a class="link" href="http://instagram.com/amandalopesct" target="_blank"><img src="imagens/insta.png"></a></li>
+                            <li> <a class="link" href="http://facebook.com" target="_blank"><img src="imagens/face.png"></a></li>  
+                    </ul>
+            </nav>
+        </div>
+        </header>
+
+        <div class="contagem-regressiva">
+            <h2 class="texto-contagem">CONTAGEM REGRESSIVA PARA A EXPOSIÇÃO</h2>
+            <div id="timer">
+                <div id="days"></div>
+                <div id="hours"></div>
+                <div id="minutes"></div>
+                <div id="seconds"></div>
+              </div>
+        </div>
+        <footer>
+            <p class="copyright">Copyright Expo Game Senac Americana Alunos de jogos 2019 &copy;</p>
+           </footer>
+
+           <script>
+           function makeTimer() {
+
+//		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
+    var endTime = new Date("03 December 2019 5:00:00 GMT-03:00");			
+        endTime = (Date.parse(endTime) / 1000);
+
+        var now = new Date();
+        now = (Date.parse(now) / 1000);
+
+        var timeLeft = endTime - now;
+
+        var days = Math.floor(timeLeft / 86400); 
+        var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+        var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+        var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+        if (hours < "10") { hours = "0" + hours; }
+        if (minutes < "10") { minutes = "0" + minutes; }
+        if (seconds < "10") { seconds = "0" + seconds; }
+
+        $("#days").html(days + "<span>Dias</span>");
+        $("#hours").html(hours + "<span>Horas</span>");
+        $("#minutes").html(minutes + "<span>Minutos</span>");
+        $("#seconds").html(seconds + "<span>Segundos</span>");		
+
+}
+
+setInterval(function() { makeTimer(); }, 1000);
+           </script>
+    </body>
+</html>

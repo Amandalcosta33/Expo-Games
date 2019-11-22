@@ -1,6 +1,10 @@
- /* body{
-        background: url('../imagens/fundinho.png')
-}  */
+  body{
+        background: url('../imagens/fundotopcerto.png');
+
+    background-repeat: repeat-x;
+    background-position: -278px 224px;
+    background-size: cover;
+} 
 
 header{
     width: 100%;
@@ -35,6 +39,7 @@ nav{
     position: relative;
     width: 930px;
     margin: 0 auto;
+    
 }
 
 
@@ -79,3 +84,37 @@ footer{
     margin: 10px 0;
     color: white;
 }
+
+.contagem-regressiva{
+    background: #7035a5;
+    width: 25%;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    padding: 20px;
+    text-align: center; 
+    border: 3px solid white;
+}
+
+.texto-contagem{
+    font-family: 'Paytone One', sans-serif;
+    font-size: 30px;
+}
+
+#days {
+    font-size: 80px;
+    color: #db4844;
+  }
+  #hours {
+    font-size: 80px;
+    color: #f07c22;
+  }
+  #minutes {
+    font-size: 80px;
+    color: #f6da74;
+  }
+  #seconds {
+    font-size: 30px;
+    color: #abcd58;
+  }
